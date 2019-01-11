@@ -70,6 +70,10 @@ def update_figure(set_n, set_p):
         'marker': {'color': 'blue'},
     }
 
+    autotick = False
+    if set_n > 50:
+        autotick = True
+
     figure = {
          'data': [data],
          'layout': {
@@ -82,7 +86,7 @@ def update_figure(set_n, set_p):
              },
              'xaxis': {
                  'title': 'Number of tries',
-                 'autotick': False,
+                 'autotick': autotick,
              },
              'yaxis': {'title': 'P(X =x)'},
          },
